@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <cronexample_adminhtml_cronexamplebackend_index>
+	<reference name="content">
+	  <block type="cronexample/adminhtml_cronexamplebackend" name="cronexamplebackend" template="cronexample/cronexamplebackend.phtml"/>
+	</reference>
+  </cronexample_adminhtml_cronexamplebackend_index>
+</layout>

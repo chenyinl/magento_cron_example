@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Chenlin_Cronexample>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>0.1.0</version>
+    </Chenlin_Cronexample>
+  </modules>
+</config>

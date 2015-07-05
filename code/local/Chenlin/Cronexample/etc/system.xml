@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<abc translate="label" module="cronexample">
+            <label>trunonoff</label>
+            <sort_order>0</sort_order>
+        </abc>
+	  </tabs>
+</config>

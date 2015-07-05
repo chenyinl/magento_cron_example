@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Chenlin_Cronexample>
+      <version>0.1.0</version>
+    </Chenlin_Cronexample>
+  </modules>
+  <global>
+    <helpers>
+      <cronexample>
+        <class>Chenlin_Cronexample_Helper</class>
+      </cronexample>
+    </helpers>
+	<blocks>
+	  <cronexample>
+		<class>Chenlin_Cronexample_Block</class>
+	  </cronexample>
+	</blocks>
+	<models>
+	  <cronexample>
+		<class>Chenlin_Cronexample_Model</class>
+		<resourceModel>cronexample_mysql4</resourceModel>
+	  </cronexample>
+	</models>
+  </global>
+  <admin>
+	<routers>
+	  <cronexample>
+	    <use>admin</use>
+		<args>
+		  <module>Chenlin_Cronexample</module>
+		  <frontName>admin_cronexample</frontName>
+		</args>
+	  </cronexample>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <cronexample module="cronexample">
+		<title>Cronexample</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <cronexamplebackend module="cronexample">
+			<title>Backend Page Title</title>
+			<sort_order>0</sort_order>
+			<action>admin_cronexample/adminhtml_cronexamplebackend</action>
+		  </cronexamplebackend>
+		</children>
+	  </cronexample>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<cronexample translate="title" module="cronexample">
+			  <title>Cronexample</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <cronexamplebackend translate="title">
+			<title>Backend Page Title</title>
+		  </cronexamplebackend>
+			  </children>
+			</cronexample>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<cronexample>
+		  <file>cronexample.xml</file>
+		</cronexample>
+	  </updates>
+	</layout>
+  </adminhtml>    
+    <crontab>
+        <jobs>            
+			<cronexample_setstatus>
+                <schedule><cron_expr>01 21 * * *</cron_expr></schedule>
+                <run><model>cronexample/cron::sendReport</model></run>
+            </cronexample_setstatus>
+        </jobs>
+    </crontab>
+</config> 
